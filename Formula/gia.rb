@@ -1,14 +1,14 @@
 class Gia < Formula
-  desc "Beschreibung deiner Anwendung"
+  desc "GIA - General Intelligence Assistant"
   homepage "https://github.com/mschnecke/gia"
   version "1.0.0"
   license "MIT" # Passe die Lizenz an
 
   if Hardware::CPU.intel?
-    url "https://github.com/mschnecke/gia/releases/download/v#{version}/gia-#{version}-x86_64-apple-darwin.tar.gz"
+    url "https://github.com/mschnecke/gia/releases/download/v#{version}/gia-macos-x86_64-v#{version}.tar.gz"
     sha256 "INTEL_SHA256_HIER" # Mit `shasum -a 256 datei.tar.gz` berechnen
   else
-    url "https://github.com/mschnecke/gia/releases/download/v#{version}/gia-#{version}-aarch64-apple-darwin.tar.gz"
+    url "https://github.com/mschnecke/gia/releases/download/v#{version}/gia-macos-aarch64-v#{version}.tar.gz"
     sha256 "ARM_SHA256_HIER"
   end
 
