@@ -1,15 +1,15 @@
 class Gia < Formula
   desc "GIA - General Intelligence Assistant"
   homepage "https://github.com/mschnecke/gia"
-  version "0.1.223"
+  version "0.1.224"
   license "MIT"
 
   if Hardware::CPU.intel?
-    url "https://github.com/mschnecke/gia/releases/download/v0.1.223/gia-macos-x86_64-v0.1.223.tar.gz"
-    sha256 "b4b7dd383e946bd91a72d2e3026ff1253c089c12c936e19ffcfb81aacc819a38"
+    url "https://github.com/mschnecke/gia/releases/download/v0.1.224/gia-macos-x86_64-v0.1.224.tar.gz"
+    sha256 "d75696c41971988764aa752ff469e2939afde2c6d11458ee0af6b5f8eb9abb1b"
   else
-    url "https://github.com/mschnecke/gia/releases/download/v0.1.223/gia-macos-aarch64-v0.1.223.tar.gz"
-    sha256 "7e6f4aeae8f0b01281412888ded3d929de8ac6ef86256433cfeb0cfa2de5b76d"
+    url "https://github.com/mschnecke/gia/releases/download/v0.1.224/gia-macos-aarch64-v0.1.224.tar.gz"
+    sha256 "4913f3fdbb2c70225894614c246459fd2563e80f02bcbe7d0adbf259a64ee5d5"
   end
 
   def install
@@ -26,6 +26,18 @@ class Gia < Formula
     # Aus Gatekeeper-Quarantäne entfernen
     system "xattr", "-d", "com.apple.quarantine", bin/"gia" rescue nil
     system "xattr", "-d", "com.apple.quarantine", bin/"giagui" rescue nil
+  end
+
+  def caveats
+    <<~EOS
+      Die Programme gia und giagui wurden installiert.
+
+      Falls beim ersten Start eine Gatekeeper-Warnung erscheint,
+      kannst du die Programme manuell freigeben mit:
+
+        sudo xattr -d com.apple.quarantine #{bin}/gia
+        sudo xattr -d com.apple.quarantine #{bin}/giagui
+    EOS
   end
 
   test do
