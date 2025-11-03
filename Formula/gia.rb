@@ -20,24 +20,12 @@ class Gia < Formula
 
   def post_install
     # Ausführbar machen (normalerweise nicht nötig, da bin.install das macht)
-    chmod 0755, bin/"gia"
-    chmod 0755, bin/"giagui"
+    # chmod 0755, bin/"gia"
+    # chmod 0755, bin/"giagui"
 
     # Aus Gatekeeper-Quarantäne entfernen
     system "xattr", "-d", "com.apple.quarantine", bin/"gia" rescue nil
     system "xattr", "-d", "com.apple.quarantine", bin/"giagui" rescue nil
-  end
-
-  def caveats
-    <<~EOS
-      Die Programme gia und giagui wurden installiert.
-
-      Falls beim ersten Start eine Gatekeeper-Warnung erscheint,
-      kannst du die Programme manuell freigeben mit:
-
-        sudo xattr -d com.apple.quarantine #{bin}/gia
-        sudo xattr -d com.apple.quarantine #{bin}/giagui
-    EOS
   end
 
   test do
