@@ -1,15 +1,15 @@
 class Gia < Formula
   desc "GIA - General Intelligence Assistant"
   homepage "https://github.com/mschnecke/gia"
-  version "0.1.225"
+  version "0.1.226"
   license "MIT"
 
   if Hardware::CPU.intel?
-    url "https://github.com/mschnecke/gia/releases/download/v0.1.225/gia-macos-x86_64-v0.1.225.tar.gz"
-    sha256 "825c17972f3d55fadc03b2f7b03f35cb2d091f85b921d377ff555051109ddca1"
+    url "https://github.com/mschnecke/gia/releases/download/v0.1.226/gia-macos-x86_64-v0.1.226.tar.gz"
+    sha256 "3c42cd08d50ab66dfc4275b918bedcd2f86c82bd4e034e2bd281d3ee1677f5d5"
   else
-    url "https://github.com/mschnecke/gia/releases/download/v0.1.225/gia-macos-aarch64-v0.1.225.tar.gz"
-    sha256 "4b465bd3abb2ddd93f50b61aa6298cee7632082457c913a885260b288a832af3"
+    url "https://github.com/mschnecke/gia/releases/download/v0.1.226/gia-macos-aarch64-v0.1.226.tar.gz"
+    sha256 "1367da0893869ea2ee1d14787dec32cec6f24ed62c0d100bc34c94bd26d1ac5b"
   end
 
   def install
