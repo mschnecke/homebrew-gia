@@ -20,8 +20,8 @@ class Gia < Formula
 
   def post_install
     # Ausführbar machen (normalerweise nicht nötig, da bin.install das macht)
-    # chmod 0755, bin/"gia"
-    # chmod 0755, bin/"giagui"
+    chmod 0755, bin/"gia"
+    chmod 0755, bin/"giagui"
 
     # Aus Gatekeeper-Quarantäne entfernen
     system "xattr", "-d", "com.apple.quarantine", bin/"gia" rescue nil
